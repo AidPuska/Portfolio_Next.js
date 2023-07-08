@@ -14,7 +14,11 @@ const Footer = ({ forwardedRef }) => {
     }, [])
 
     return (
-        <div ref={forwardedRef} className="h-52 bg-green-700 text-gray-200 relative rounded-md m-5 flex items-center justify-evenly">
+        <div 
+            ref={forwardedRef} 
+            className="h-52 bg-green-700 text-gray-200 relative 
+            rounded-md m-5 flex items-center justify-evenly"
+        >
             <div className="flex flex-col items-center">
                 <h1 id="foot" class="ml-2">&copy; 2022 Aid Puska</h1>
                 <div className="flex gap-1">

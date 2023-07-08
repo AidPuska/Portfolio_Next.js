@@ -3,7 +3,7 @@ import React from 'react'
 import Skill from './Skill'
 import { skills } from '@/utils/data'
 
-const S = ({forwardedRef}) => {
+const Skills = ({forwardedRef}) => {
     return (
         <div ref={forwardedRef} className='flex flex-col gap-5 items-center 
         justify-center shadow-2xl shadow-black bg-gray-100 pt-5'>
@@ -21,4 +21,4 @@ const S = ({forwardedRef}) => {
     )
 }
 
-export default S
+export default Skills

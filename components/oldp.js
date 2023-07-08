@@ -6,26 +6,14 @@ import outer_link from '../assets/outer_link.png'
 
 const OldP = ({ changeStyle, setChangeStyle, forwardedRef }) => {
 
-    const [articleWidth, setArticleWidth] = useState(0)
-
     const handleClick = () => {
         setChangeStyle(!changeStyle)
     }
-
-    const articleRef = useRef()
-
-    useEffect(() => {
-        setArticleWidth(articleRef.current.clientWidth)
-    }, [])
-
-    const padding = (articleWidth / 2)
-    console.log(padding)
 
     return (
         <div ref={forwardedRef} className='md:mx-20 relative'>
             {projects.map(project => (
                 <motion.article 
-                    ref={articleRef}
                     initial={{ paddingLeft: 0, scale: 1, paddingRight: 0}}
                     whileHover={{paddingLeft: '12%', scale: 0.92, paddingRight: '12%',transition: {duration: 0.5}}}
                     className='md:flex m-5 md:m-10 mt-16 p-10 gap-10 
