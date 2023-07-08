@@ -46,7 +46,7 @@ const Navbar = ({ projectRef, footerRef, skillsRef }) => {
                     initial={{ x: 400 }} 
                     animate={{ x: 0 }} 
                     transition={{ delay: 1, type: 'spring' }} 
-                    class="hidden md:flex flex-row gap-4 py-4 px-4 mr-2"
+                    className="hidden md:flex flex-row gap-4 py-4 px-4 mr-2"
                 >
                     <motion.li 
                         onClick={goToProjects} 
@@ -89,7 +89,7 @@ const Navbar = ({ projectRef, footerRef, skillsRef }) => {
                 </motion.button>
 
                 {view && <div className='bg-green-600/50 mt-56 absolute rounded right-1 flex justify-center'>
-                    <ul class="flex flex-col gap-4 py-4 items-center px-4 md:hidden">
+                    <ul className="flex flex-col gap-4 py-4 items-center px-4 md:hidden">
                         <li onClick={goToProjects} className="text-[#ffeaee] hover:font-semibold cursor-pointer">Projects</li>
                         <motion.li 
                             onClick={goToSkills} 
