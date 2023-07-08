@@ -12,8 +12,6 @@ import Image from "next/image"
 
 const Projects = ({ forwardedRef, changeStyle, setChangeStyle }) => {
 
-    //const defImage = 'https://i.stack.imgur.com/mwFzF.png'
-
     const [open, setOpen] = useState(false)
     const [order, setOrder] = useState(null)
 
@@ -63,30 +61,30 @@ const Projects = ({ forwardedRef, changeStyle, setChangeStyle }) => {
                 {projects.map((project, index) => (
                     <InView>
                         {({ ref, inView }) => (
-                            <motion.div
-                                ref={ref}
-                                key={index}
-                                className="shadow-md bg-white shadow-black/50 rounded-sm flex flex-col items-center mx-0 md:mx-6 my-16 p-4 gap-4 border-black"
-                            >
-                                <motion.p className="text-2xl w-full text-center font-medium border-bot border bg-green-500 p-1 border-green-800 flex items-center justify-center"><img src={title} className='w-4 h-4' alt="" />{project.name}</motion.p>
-                                <motion.p className="text-lg font-light text-center w-[300px] md:w-[360px] flex items-center"><img src={desc} className='w-4 h-4' alt="" />{project.desc}</motion.p>
+                           <motion.div
+                           ref={ref}
+                           key={index}
+                           className="shadow-md bg-white shadow-black/50 rounded-sm flex flex-col items-center mx-0 md:mx-6 my-16 p-4 gap-4 border-black"
+                       >
+                           <motion.p className="text-2xl w-full text-center font-medium border-bot border bg-green-500 p-1 border-green-800 flex items-center justify-center"><img src={title} className='w-4 h-4' alt="" />{project.name}</motion.p>
+                           <motion.p className="text-lg font-light text-center w-[300px] md:w-[360px] flex items-center"><img src={desc} className='w-4 h-4' alt="" />{project.desc}</motion.p>
 
-                            <div className="relative w-[300px] md:w-[365px] h-52 md:h-[300px]">
-                                <Image
-                                    onClick={() => handleClick(index)}
-                                    className="w-[300px] md:w-[365px] h-52 md:h-[300px] 
-                                    border border-green-800 rounded object-cover"
-                                    src={project.img}
-                                    fill
-                                    quality={100}
-                                    alt='project_image'
-                                    />
-                            </div>
+                       <div className="relative w-[300px] md:w-[365px] h-52 md:h-[300px]">
+                           <Image
+                               onClick={() => handleClick(index)}
+                               className="w-[300px] md:w-[365px] h-52 md:h-[300px] 
+                               border border-green-800 rounded object-cover"
+                               src={project.img}
+                               fill
+                               quality={100}
+                               alt='project_image'
+                               />
+                       </div>
 
 
-                                <motion.p className="w-[300px] md:w-[350px]">Made with: {project.madeWith}</motion.p>
-                                <motion.a href={project.link} target="_blank" rel="noopener noreferrer" className="w-[300px] md:w-[350px] text-green-600">{project.link}</motion.a>
-                            </motion.div>
+                           <motion.p className="w-[300px] md:w-[350px]">Made with: {project.madeWith}</motion.p>
+                           <motion.a href={project.link} target="_blank" rel="noopener noreferrer" className="w-[300px] md:w-[350px] text-green-600">{project.link}</motion.a>
+                       </motion.div>  
                         )}
                     </InView>
                 ))}

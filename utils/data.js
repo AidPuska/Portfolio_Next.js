@@ -1,10 +1,10 @@
-import yelp from '../assets/yelpcamp.png'
 import proManag from '../assets/proManag.png'
 import portfolio from '../assets/portfolio.png'
 import vaktija from '../assets/vaktija.png'
 import movie from '../assets/moviedb.png'
-const webScraper = require('../assets/web-scraper.png')
-const dall = require('../assets/dall-e.png')
+import yelp from '../assets/yelpcamp.png'
+import webScraper from '../assets/web-scraper.png'
+import dall from '../assets/dall-e.png'
 
 
 export const projects = [

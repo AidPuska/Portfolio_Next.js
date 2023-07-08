@@ -10,6 +10,7 @@ import Contact from "@/components/Contact"
 import Project from "@/components/Project"
 import Image from "next/image"
 import S from "@/components/Skills"
+import OldP from "@/components/oldp"
 
 const Home = () => {
 
@@ -70,7 +71,7 @@ const Home = () => {
                   changeStyle={changeStyle} 
                 />
                 :
-                <Project 
+                <OldP 
                   forwardedRef={projectRef} 
                   setChangeStyle={setChangeStyle} 
                   changeStyle={changeStyle} 
