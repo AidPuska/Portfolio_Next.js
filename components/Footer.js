@@ -12,7 +12,7 @@ const Footer = ({ forwardedRef, viewCount }) => {
             rounded-md m-5 flex items-center justify-evenly"
         >
             <div className="flex flex-col items-center">
-                <h1 id="foot" class="ml-2">&copy; {new Date().getFullYear()} Aid Puska</h1>
+                <h1 id="foot" className="ml-2">&copy; {new Date().getFullYear()} Aid Puska</h1>
                 <div className="flex gap-1">
                     <p>Page visits: </p>
                     <div className="bg-white px-1 rounded-sm text-black">{viewCount}</div>

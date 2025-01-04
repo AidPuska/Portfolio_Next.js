@@ -13,6 +13,9 @@ const Home = () => {
     useEffect(() => {
         axios.post('https://view-count.onrender.com/')
             .then(result => setViewCount(result.data))
+        axios.get('/api')
+            .then(result => console.log("result ip", result?.data?.ip))
+            .catch(error => console.error("Error getting ip: ", error))
     }, [])
 
     const projectRef = useRef(null)
