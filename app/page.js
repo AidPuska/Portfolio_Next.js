@@ -4,10 +4,15 @@ import { useEffect, useRef, useState } from "react"
 import { Footer, Intro, Skills, Contact, OldP } from "@/components"
 import goUp from '../assets/goup.svg'
 import Image from "next/image"
+import axios from "axios"
 
 const Home = () => {
 
+    const [viewCount, setViewCount] = useState(0)
+
     useEffect(() => {
+        axios.post('https://view-count.onrender.com/')
+            .then(result => setViewCount(result.data))
     }, [])
 
     const projectRef = useRef(null)
@@ -57,7 +62,7 @@ const Home = () => {
             />
             <Skills forwardedRef={skillsRef} />
             <Contact />
-            <Footer forwardedRef={footerRef} />
+            <Footer forwardedRef={footerRef} viewCount={viewCount} />
 
             {isVisible && (
                 <div

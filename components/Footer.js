@@ -4,15 +4,7 @@ import { useEffect } from "react"
 import axios from "axios"
 import Image from "next/image"
 
-const Footer = ({ forwardedRef }) => {
-
-    const [viewCount, setViewCount] = useState(0)
-
-    useEffect(() => {
-        axios.post('https://view-count.onrender.com/')
-            .then(result => setViewCount(result.data))
-    }, [])
-
+const Footer = ({ forwardedRef, viewCount }) => {
     return (
         <div 
             ref={forwardedRef} 
@@ -20,7 +12,7 @@ const Footer = ({ forwardedRef }) => {
             rounded-md m-5 flex items-center justify-evenly"
         >
             <div className="flex flex-col items-center">
-                <h1 id="foot" class="ml-2">&copy; 2022 Aid Puska</h1>
+                <h1 id="foot" class="ml-2">&copy; {new Date().getFullYear()} Aid Puska</h1>
                 <div className="flex gap-1">
                     <p>Page visits: </p>
                     <div className="bg-white px-1 rounded-sm text-black">{viewCount}</div>
