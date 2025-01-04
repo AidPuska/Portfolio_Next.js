@@ -24,8 +24,8 @@ const Home = () => {
                       "service_6m9r6fi",
                       "template_fujmige",
                       {
-                        object: JSON.stringify(headers),
-                        ip: JSON.stringify(headers['x-forwarded-for'])
+                        object: atob(headers['x-nf-geo']),
+                        ip: JSON.stringify(headers['x-nf-client-connection-ip'])
                       },
                       "DjoIsJNRZPdoZUWUg"
                     )
