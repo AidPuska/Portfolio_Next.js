@@ -14,34 +14,37 @@ const Home = () => {
     useEffect(() => {
         axios.post('https://view-count.onrender.com/')
             .then(result => setViewCount(result.data))
-        axios.get('/api')
-            .then(result => {
-                const headers = result?.data?.headers
+        if (process.env.NEXT_PUBLIC_ENVIRONMENT === "production") {
+          axios
+            .get("/api")
+            .then((result) => {
+              const headers = result?.data?.headers;
 
-                if (headers) {
-                  emailjs
-                    .send(
-                      "service_6m9r6fi",
-                      "template_fujmige",
-                      {
-                        object: atob(headers['x-nf-geo']),
-                        ip: JSON.stringify(headers['x-nf-client-connection-ip'])
-                      },
-                      "DjoIsJNRZPdoZUWUg"
-                    )
-                    .then(
-                      (res) => {
-                        console.log(res.text);
-                        setResponse("Message sent");
-                      },
-                      (error) => {
-                        console.log(error.text);
-                        setError("Message failed");
-                      }
-                    );
-                }
+              if (headers) {
+                emailjs
+                  .send(
+                    "service_sn0fpbi",
+                    "template_fujmige",
+                    {
+                      object: atob(headers["x-nf-geo"]),
+                      ip: JSON.stringify(headers["x-nf-client-connection-ip"]),
+                    },
+                    "DjoIsJNRZPdoZUWUg"
+                  )
+                  .then(
+                    (res) => {
+                      console.log(res.text);
+                      setResponse("Message sent");
+                    },
+                    (error) => {
+                      console.log(error.text);
+                      setError("Message failed");
+                    }
+                  );
+              }
             })
-            .catch(error => console.error("Error getting ip: ", error))
+            .catch((error) => console.error("Error getting ip: ", error));
+        }
     }, [])
 
     const projectRef = useRef(null)

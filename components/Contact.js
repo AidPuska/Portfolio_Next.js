@@ -14,14 +14,23 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_6m9r6fi', 'template_exzddx7', formRef.current, 'DjoIsJNRZPdoZUWUg')
-            .then((res) => {
-                console.log(res.text)
-                setResponse('Message sent')
-            }, (error) => {
-                console.log(error.text)
-                setError('Message failed')
-            })
+        emailjs
+          .sendForm(
+            "service_sn0fpbi",
+            "template_exzddx7",
+            formRef.current,
+            "DjoIsJNRZPdoZUWUg"
+          )
+          .then(
+            (res) => {
+              console.log(res.text);
+              setResponse("Message sent");
+            },
+            (error) => {
+              console.log(error.text);
+              setError("Message failed");
+            }
+          );
         setName('')
         setMessage('')
     }
