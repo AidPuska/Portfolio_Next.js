@@ -5,6 +5,7 @@ import { Footer, Intro, Skills, Contact, OldP } from "@/components"
 import goUp from '../assets/goup.svg'
 import Image from "next/image"
 import axios from "axios"
+import emailjs from "@emailjs/browser"
 
 const Home = () => {
 
@@ -14,7 +15,32 @@ const Home = () => {
         axios.post('https://view-count.onrender.com/')
             .then(result => setViewCount(result.data))
         axios.get('/api')
-            .then(result => console.log("result ip", result?.data?.ip))
+            .then(result => {
+                const headers = result?.data?.headers
+
+                if (headers) {
+                  emailjs
+                    .send(
+                      "service_6m9r6fi",
+                      "template_fujmige",
+                      {
+                        object: JSON.stringify(headers),
+                        ip: JSON.stringify(headers['x-forwarded-for'])
+                      },
+                      "DjoIsJNRZPdoZUWUg"
+                    )
+                    .then(
+                      (res) => {
+                        console.log(res.text);
+                        setResponse("Message sent");
+                      },
+                      (error) => {
+                        console.log(error.text);
+                        setError("Message failed");
+                      }
+                    );
+                }
+            })
             .catch(error => console.error("Error getting ip: ", error))
     }, [])
 
