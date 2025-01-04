@@ -81,7 +81,7 @@ export const skills = [
     },
     {
         name: 'TailwindCSS',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg'
+        icon: '/tailwind.svg'
     },
     {
         name: 'Express.js',
