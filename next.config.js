@@ -7,7 +7,16 @@ const nextConfig = {
                 hostname: "**"
             },
         ]
-    }
+    },
+    async redirects() {
+        return [
+            {
+                source: '/:path*',
+                destination: 'https://aidpuska.com/:path*',
+                permanent: true,
+            },
+        ];
+    },
 }
 
 module.exports = nextConfig
